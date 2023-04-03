@@ -199,36 +199,6 @@ class Network{
 			return totalCost / data.size();
 		}
 		
-		/*
-		void Learn(std::vector<DataBlock> data, double learnRate){
-			const double h = 0.0001;
-			double originalLoss = loss(data);
-
-			for(auto &layer : layers){
-				for(int nodeIn=0; nodeIn < layer.nodesIn; nodeIn++){
-
-					for(int nodeOut=0; nodeOut < layer.nodesOut; nodeOut++){
-						layer.weights[nodeIn][nodeOut] += h;
-						double delta = loss(data) - originalLoss;
-						layer.weights[nodeIn][nodeOut] -= h;
-						layer.gradientW[nodeIn][nodeOut] = delta / h;
-					}
-				}
-
-				for(int biasInd=0; biasInd < layer.nodesOut; biasInd++){
-					layer.biases[biasInd] += h;
-					double delta = loss(data) - originalLoss;
-					layer.biases[biasInd] -= h;
-					layer.gradientB[biasInd] = delta / h;
-				}
-
-			}
-			for(auto &layer : layers){
-				layer.applyGradients(learnRate);
-			}
-		
-		}
-		*/
 
 		void Learn(std::vector<DataBlock> data, double learnRate){
 			for(auto &dataBlock : data){
